@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:student_ui/pages/course_page.dart';
 import 'package:student_ui/theme.dart';
 
 class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -48,7 +50,13 @@ class SplashPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width - (2 * defaultMargin),
               height: 50,
               child: FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CoursePage(),
+                      ));
+                },
                 color: blueColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(17),
